@@ -27,7 +27,8 @@ tab_control.add(tab1, text = 'Recieve')
 tab_control.add(tab2, text = 'Send')
 tab_control.pack(fill = 'both')
 
-########################### Text in the main window ###########################
+########################### Text ##############################################
+# Main Window
 label = Label(window, text = 'Wallet Amount', padx = 5, pady = 0)
 label.pack()
 
@@ -35,15 +36,15 @@ labela = Label(window, text = Wallet, padx = 5, pady = 0)
 labela.pack()
 
 # Tab 1 
-label1 = Label(tab1, text 	= 'Enter Wallet ID', padx = 5, pady = 5)
+label1 = Label(tab1, text = 'Enter Wallet ID', padx = 5, pady = 5)
 label1.grid(column = 0, row = 0, sticky = W)
 
-label1a = Label(tab1, text = 'Enter EMD', padx 	= 5, pady = 5)
+label1a = Label(tab1, text = 'Enter EMD', padx = 5, pady = 5)
 label1a.grid(column	= 0, row = 1, sticky = W)
 
 
 # Tab 2
-label2 	= Label(tab2, text 	= 'Enter Wallet ID', padx = 5, pady = 5)
+label2 = Label(tab2, text = 'Enter Wallet ID', padx = 5, pady = 5)
 label2.grid(column	= 0, row = 0, sticky = W)
 
 label2a = Label(tab2, text 	= 'Send Amount', padx = 5, pady = 5)
@@ -68,7 +69,6 @@ amountEntry.grid(row = 1, column = 1)
 # Output when the button is clicked.
 # clickedRecieve and clickedSend should both update the Wallet total which is on it's
 # own window, so they both can update the global variable Wallet. 
-
 def clickedReceive():
 	messagebox.showinfo('Success', 'Money Recieved')
 
@@ -84,12 +84,12 @@ def sync():
 button_sync1 = Button(tab1, text = 'Sync', command = sync, padx = 0, pady = 0)
 button_sync1.grid(column = 2, row = 0, padx = 5, pady = 0,sticky = EW)
 
-button_receive = Button(tab1, text 	= 'Receive', command = clickedSend, padx = 0, pady = 0)
-button_receive.grid(column = 2, row = 1,padx = 5, pady = 0,ipadx= 1, sticky = EW)
+button_receive1 = Button(tab1, text = 'Receive', command = clickedReceive, padx = 0, pady = 0)
+button_receive1.grid(column = 2, row = 1, padx = 5, pady = 0, ipadx = 1, sticky = EW)
 
 # Tab 2
 button_sync2 = Button(tab2, text = 'Sync', command = sync, padx = 0, pady = 0)
-button_sync2.grid(column = 2, row = 0, padx = 5, pady 	= 0, ipadx = 9, sticky = EW)
+button_sync2.grid(column = 2, row = 0, padx = 5, pady = 0, ipadx = 9, sticky = EW)
 
 button_send2 = Button(tab2, text = 'Send', command = clickedSend, padx = 0, pady = 0)
 button_send2.grid(column = 2, row = 1, padx = 5, pady = 0, sticky = EW)
