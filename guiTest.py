@@ -2,17 +2,23 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
+# Global variable for the wallet value. 
+# Unsure of what is returned from the hexa, a string or a int/float/etc. 
+Wallet = 0
+
 window = Tk()
 window.title("Wallet")
 
 # Window Size
-window.geometry('550x120')
+window.geometry('550x150')
 tab_control = ttk.Notebook(window)
+tab_control.pack()
 
 # Tab Frames
 tab1 = ttk.Frame(tab_control)
 tab2 = ttk.Frame(tab_control)
 
+# Stretch Entry Column
 tab1.grid_columnconfigure(1, weight = 2)
 tab2.grid_columnconfigure(1, weight = 2)
 
@@ -24,6 +30,20 @@ tab_control.pack(		expand 	= 1,
 				 		)
 
 # Text in the main window
+label 	= Label(window, 
+				text 	= 'Wallet Amount',
+				padx 	= 5, 
+				pady 	= 0,
+				)
+label.pack()
+
+labela 	= Label(window, 
+				text 	= Wallet,
+				padx 	= 5, 
+				pady 	= 0,
+				)
+labela.pack()
+
 # Tab 1 
 label1 	= Label(tab1, 
 				text 	= 'Enter Wallet ID', 
@@ -43,15 +63,6 @@ label1a.grid(	column	= 0,
 				sticky 	= W
 				)
 
-label1b 	= Label(tab1, 
-				text 	= 'Wallet Amount',
-				padx 	= 5, 
-				pady 	= 5
-				)
-label1b.grid(	column	= 0, 
-				row		= 2, 
-				sticky 	= W
-				)
 
 # Tab 2
 label2 	= Label(tab2, 
@@ -72,14 +83,6 @@ label2a.grid(	column	= 0,
 				sticky 	= W
 				)
 
-label2b 	= Label(tab2, 
-				text 	= 'Wallet Amount',
-				padx 	= 5, 
-				pady 	= 5)
-label2b.grid(	column	= 0, 
-				row		= 2, 
-				sticky 	= W
-				)
 
 # Entry
 # Tab 1
@@ -111,10 +114,14 @@ amountEntry.grid( 	row 	= 1,
 					)
 
 # Buttons
-# Output when the button is clicked
+# Output when the button is clicked.
+# clickedRecieve and clickedSend should both update the Wallet total which is on it's
+# own window, so they both can update the global variable Wallet. 
+
 def clickedReceive():
 	messagebox.showinfo('Success', 'Money Recieved')
 
+# Should display the token, probably have to set a variable to recieve it. 
 def clickedSend():
 	messagebox.showinfo('Success', 'Money Sent')
 
