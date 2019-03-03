@@ -54,6 +54,7 @@ label2a.grid(column	= 0, row = 1, sticky = W)
 # Tab 1
 idEntry1 = Entry(tab1, width = 75)
 idEntry1.grid(row = 0, column = 1)
+
 hexEntry = Entry(tab1, width = 75)
 hexEntry.grid(row = 1, column = 1)
 # Tab 2
